@@ -73,4 +73,26 @@ function isThereEmptyValues(objToCheck) {
 
 // isvalti feedback atitinkamoje vietoje
 
-function sendRegisterFetch(obj) {}
+function sendRegisterFetch(obj) {
+  console.log('obj ===', obj);
+  fetch('https://reqres.in/api/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(obj),
+  })
+    .then((resp) => resp.json())
+    .then((ats) => {
+      console.log('ats ===', ats);
+      if (ats.error) {
+        // klaida
+        // showFeedback error
+      }
+      if (ats.token) {
+        // pavyko
+        // redirect to login
+      }
+    })
+    .catch((err) => {
+      console.warn(err);
+    });
+}
