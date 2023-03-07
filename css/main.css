@@ -8,3 +8,16 @@
   color: tomato;
   display: none;
 }
+
+.feedback {
+  border: 1px solid black;
+  text-align: center;
+  font-weight: normal;
+  padding: 10px;
+  display: none;
+}
+.feedback.error {
+  border-color: tomato;
+  color: tomato;
+  display: block;
+}
