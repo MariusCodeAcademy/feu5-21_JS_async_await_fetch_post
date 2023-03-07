@@ -14,7 +14,7 @@ function getData(url) {
       // alert('ivyko klaida, bandykite veliau');
     });
 }
-
+// prideti try catch
 async function getDataAsync(url) {
   const resp = await fetch(url);
   const dataInJs = await resp.json();
