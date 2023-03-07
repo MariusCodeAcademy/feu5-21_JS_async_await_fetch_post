@@ -25,6 +25,16 @@ async function sendFetchAsync(newPost) {
       body: JSON.stringify(newPost),
     });
     console.log('response ===', response);
+
+    // pasitikrinti ar pavyko sukurti post
+    // nepavyko sukurti jei response.status nelygus 200
+    // arba response.ok yra false
+    if (response.status !== 200) {
+      // klaida sukurti nepavyko
+      console.log('klaida sukurti nepavyko');
+      return;
+    }
+
     const ats = await response.json();
     console.log('ats ===', ats);
     if (ats.message === 'User id is required') {
