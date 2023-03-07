@@ -35,3 +35,10 @@ getData('/db/nums.json')
   .then((colorsData) => {
     console.log('colorsData ===', colorsData);
   });
+
+async function getTwoDatas() {
+  const numsData = await getData('/db/nums.json');
+  const colorsData = await getData('/db/colors.json');
+  console.log({ numsData, colorsData });
+}
+getTwoDatas();

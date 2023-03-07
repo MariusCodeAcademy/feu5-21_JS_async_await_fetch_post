@@ -16,10 +16,14 @@ function getData(url) {
 }
 // prideti try catch
 async function getDataAsync(url) {
-  const resp = await fetch(url);
-  const dataInJs = await resp.json();
-  console.log('getData ===', dataInJs);
+  try {
+    const resp = await fetch(url);
+    const dataInJs = await resp.json();
+    console.log('getData ===', dataInJs);
+  } catch (error) {
+    console.warn('klaida ivyko getDataAsync', error);
+  }
 }
 
-getData('/db2/nums.json');
-// getDataAsync('/db2/nums.json');
+// getData('/db2/nums.json');
+getDataAsync('/db/nums.json');
