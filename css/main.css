@@ -1,1 +1,10 @@
 @import 'common.css';
+
+.errorMsg {
+  border: 1px solid tomato;
+  text-align: center;
+  font-weight: normal;
+  padding: 10px;
+  color: tomato;
+  display: none;
+}
