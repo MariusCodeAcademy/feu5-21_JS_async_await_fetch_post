@@ -52,6 +52,12 @@ function handleRegisterSubmit(e) {
   sendRegisterFetch({ email: allFormValues.email, password: allFormValues.password });
 }
 
+/**
+ * function that checks if argument values match
+ * @param {string} val1
+ * @param {string} val2
+ * @returns Boolean
+ */
 function doValuesMatch(val1, val2) {
   return val1 === val2;
 }
